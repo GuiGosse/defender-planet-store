@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Cpu, HardDrive, Zap, Monitor, MemoryStick, Motherboard, Box } from "lucide-react";
+import { Cpu, HardDrive, Zap, Monitor, MemoryStick, CircuitBoard, Box } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const PCBuilder = () => {
@@ -70,7 +70,7 @@ const PCBuilder = () => {
     cpu: Cpu,
     gpu: Monitor,
     ram: MemoryStick,
-    motherboard: Motherboard,
+    motherboard: CircuitBoard,
     ssd: HardDrive,
     power: Zap,
     case: Box
