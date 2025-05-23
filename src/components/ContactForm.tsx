@@ -1,0 +1,190 @@
+
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import { Send, Mail, Phone, Clock } from "lucide-react";
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Campos obrigatórios",
+        description: "Por favor, preencha todos os campos obrigatórios.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    console.log("Form submitted:", formData);
+    
+    toast({
+      title: "Mensagem enviada!",
+      description: "Entraremos em contato em até 24h úteis.",
+    });
+
+    setFormData({ name: "", email: "", phone: "", message: "" });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  return (
+    <section id="contact" className="py-20 px-4 bg-slate-900/50">
+      <div className="container mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Solicite Seu Orçamento
+          </h2>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Preencha o formulário e receba uma proposta personalizada
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Contact Information */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Entre em Contato
+              </h3>
+              <p className="text-gray-300 mb-8">
+                Nossa equipe está pronta para ajudar você a montar o PC dos seus sonhos. 
+                Entre em contato conosco e receba atendimento personalizado.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center mr-4">
+                  <Mail className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold">Email</h4>
+                  <p className="text-gray-300">contato@montagepc.com</p>
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center mr-4">
+                  <Phone className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold">Telefone</h4>
+                  <p className="text-gray-300">(11) 99999-9999</p>
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center mr-4">
+                  <Clock className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold">Atendimento</h4>
+                  <p className="text-gray-300">Seg à Sex: 9h às 18h</p>
+                </div>
+              </div>
+            </div>
+
+            <Card className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 border-green-500/30">
+              <CardContent className="p-6">
+                <h4 className="text-green-400 font-semibold mb-2">
+                  ⚡ Atendimento Prioritário!
+                </h4>
+                <p className="text-gray-300 text-sm">
+                  Os 10 primeiros da semana recebem atendimento prioritário 
+                  e desconto especial na montagem!
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Contact Form */}
+          <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+            <CardHeader>
+              <CardTitle className="text-white text-2xl">Formulário de Contato</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <Input
+                    name="name"
+                    placeholder="Seu nome completo *"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="Seu melhor email *"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <Input
+                    name="phone"
+                    placeholder="Telefone/WhatsApp"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400"
+                  />
+                </div>
+
+                <div>
+                  <Textarea
+                    name="message"
+                    placeholder="Descreva seu projeto ou deixe sua mensagem *"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400 min-h-[120px]"
+                    required
+                  />
+                </div>
+
+                <Button 
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"
+                >
+                  <Send className="mr-2 h-5 w-5" />
+                  Enviar Solicitação
+                </Button>
+
+                <p className="text-sm text-gray-400 text-center">
+                  * Campos obrigatórios | Responderemos em até 24h úteis
+                </p>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactForm;
