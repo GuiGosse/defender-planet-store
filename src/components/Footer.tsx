@@ -1,27 +1,27 @@
 
-import { Monitor, Mail, Phone, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
+import { Cpu, Mail, Phone, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 text-gray-300 py-16 px-4">
+    <footer className="bg-black text-gray-300 py-16 px-4 border-t border-gray-800">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                <Monitor className="h-5 w-5 text-white" />
+              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center border border-orange-400">
+                <Cpu className="h-5 w-5 text-black" />
               </div>
               <span className="text-xl font-bold text-white">TechAssemble</span>
             </div>
             <p className="text-gray-400 mb-4">
-              Especialistas em montagem personalizada de computadores. 
+              Especialistas em produtos eletrônicos e montagem personalizada de computadores. 
               Transformamos sua visão em realidade.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="h-5 w-5 hover:text-purple-400 cursor-pointer transition-colors" />
-              <Instagram className="h-5 w-5 hover:text-purple-400 cursor-pointer transition-colors" />
-              <Youtube className="h-5 w-5 hover:text-purple-400 cursor-pointer transition-colors" />
+              <Facebook className="h-5 w-5 hover:text-orange-400 cursor-pointer transition-colors" />
+              <Instagram className="h-5 w-5 hover:text-orange-400 cursor-pointer transition-colors" />
+              <Youtube className="h-5 w-5 hover:text-orange-400 cursor-pointer transition-colors" />
             </div>
           </div>
 
@@ -29,10 +29,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Serviços</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Montagem de PC</a></li>
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Upgrade de Componentes</a></li>
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Suporte Técnico</a></li>
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Garantia Estendida</a></li>
+              <li><a href="#" className="hover:text-orange-400 transition-colors">Montagem de PC</a></li>
+              <li><a href="#" className="hover:text-orange-400 transition-colors">Venda de Componentes</a></li>
+              <li><a href="#" className="hover:text-orange-400 transition-colors">Suporte Técnico</a></li>
+              <li><a href="#" className="hover:text-orange-400 transition-colors">Garantia Estendida</a></li>
             </ul>
           </div>
 
@@ -40,10 +40,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Produtos</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Processadores</a></li>
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Placas de Vídeo</a></li>
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Memórias RAM</a></li>
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Armazenamento</a></li>
+              <li><a href="#" className="hover:text-orange-400 transition-colors">Processadores</a></li>
+              <li><a href="#" className="hover:text-orange-400 transition-colors">Placas de Vídeo</a></li>
+              <li><a href="#" className="hover:text-orange-400 transition-colors">Memórias RAM</a></li>
+              <li><a href="#" className="hover:text-orange-400 transition-colors">Periféricos</a></li>
             </ul>
           </div>
 
@@ -52,31 +52,31 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Contato</h3>
             <div className="space-y-3">
               <div className="flex items-center">
-                <Mail className="h-4 w-4 mr-3 text-purple-400" />
+                <Mail className="h-4 w-4 mr-3 text-orange-400" />
                 <span>contato@techassemble.com</span>
               </div>
               <div className="flex items-center">
-                <Phone className="h-4 w-4 mr-3 text-purple-400" />
+                <Phone className="h-4 w-4 mr-3 text-orange-400" />
                 <span>(11) 99999-9999</span>
               </div>
               <div className="flex items-center">
-                <MapPin className="h-4 w-4 mr-3 text-purple-400" />
+                <MapPin className="h-4 w-4 mr-3 text-orange-400" />
                 <span>São Paulo, SP</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-slate-800 mt-12 pt-8">
+        <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
               © 2024 TechAssemble. Todos os direitos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-purple-400 text-sm transition-colors">
+              <a href="#" className="text-gray-400 hover:text-orange-400 text-sm transition-colors">
                 Política de Privacidade
               </a>
-              <a href="#" className="text-gray-400 hover:text-purple-400 text-sm transition-colors">
+              <a href="#" className="text-gray-400 hover:text-orange-400 text-sm transition-colors">
                 Termos de Uso
               </a>
             </div>

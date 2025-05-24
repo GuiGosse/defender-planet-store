@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Monitor, Zap } from "lucide-react";
+import { Menu, X, Cpu, Zap } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,21 +14,21 @@ const Header = () => {
 
   const navItems = [
     { label: "Início", id: "hero" },
-    { label: "Monte seu PC", id: "pc-builder" },
     { label: "Produtos", id: "products" },
+    { label: "Monte seu PC", id: "pc-builder" },
     { label: "Como Funciona", id: "how-it-works" },
     { label: "Galeria", id: "gallery" },
     { label: "Contato", id: "contact" }
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-md border-b border-slate-800 z-50">
+    <header className="fixed top-0 w-full bg-black/95 backdrop-blur-md border-b border-gray-800 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-              <Monitor className="h-5 w-5 text-white" />
+            <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center border border-orange-400">
+              <Cpu className="h-5 w-5 text-black" />
             </div>
             <span className="text-xl font-bold text-white">TechAssemble</span>
           </div>
@@ -39,7 +39,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-300 hover:text-white transition-colors duration-200"
+                className="text-gray-300 hover:text-orange-400 transition-colors duration-200"
               >
                 {item.label}
               </button>
@@ -49,17 +49,17 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <Button
-              onClick={() => scrollToSection('pc-builder')}
+              onClick={() => scrollToSection('products')}
               variant="outline"
               size="sm"
-              className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white"
+              className="border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black bg-black/50"
             >
-              Monte seu PC
+              Ver Produtos
             </Button>
             <Button
               onClick={() => scrollToSection('contact')}
               size="sm"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black border border-orange-400"
             >
               <Zap className="mr-2 h-4 w-4" />
               Orçamento
@@ -77,30 +77,30 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-slate-800">
+          <div className="md:hidden py-4 border-t border-gray-800">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 text-left"
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-200 text-left"
                 >
                   {item.label}
                 </button>
               ))}
               <div className="flex flex-col space-y-2 pt-4">
                 <Button
-                  onClick={() => scrollToSection('pc-builder')}
+                  onClick={() => scrollToSection('products')}
                   variant="outline"
                   size="sm"
-                  className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white"
+                  className="border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black bg-black/50"
                 >
-                  Monte seu PC
+                  Ver Produtos
                 </Button>
                 <Button
                   onClick={() => scrollToSection('contact')}
                   size="sm"
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black border border-orange-400"
                 >
                   <Zap className="mr-2 h-4 w-4" />
                   Orçamento
