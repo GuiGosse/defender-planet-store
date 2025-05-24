@@ -37,14 +37,14 @@ const Advantages = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 bg-neutral-950">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Por Que Escolher a Nossa Empresa?
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Diferenciais que fazem da nossa empresa a melhor escolha para seu PC
+            Diferenciais que fazem da nossa empresa a melhor escolha para seus produtos eletrônicos
           </p>
         </div>
 
@@ -54,11 +54,11 @@ const Advantages = () => {
             return (
               <Card 
                 key={index} 
-                className="bg-slate-800/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 transform hover:scale-105 hover:shadow-purple-500/20 hover:shadow-lg"
+                className="bg-neutral-900/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-900/70 transition-all duration-300 transform hover:scale-105 hover:shadow-orange-500/20 hover:shadow-lg hover:border-orange-500/30"
               >
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="h-8 w-8 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon className="h-8 w-8 text-black" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">
                     {advantage.title}

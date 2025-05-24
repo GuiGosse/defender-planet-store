@@ -37,7 +37,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-slate-900/50">
+    <section className="py-20 px-4 bg-neutral-900">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -52,7 +52,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index} 
-              className="bg-slate-800/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 transform hover:scale-105"
+              className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-800/70 transition-all duration-300 transform hover:scale-105 hover:border-orange-500/30"
             >
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
@@ -65,7 +65,7 @@ const Testimonials = () => {
                     <h4 className="text-white font-semibold">{testimonial.name}</h4>
                     <div className="flex">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                        <Star key={i} className="h-4 w-4 text-orange-400 fill-current" />
                       ))}
                     </div>
                   </div>

@@ -47,7 +47,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-slate-900/50">
+    <section id="contact" className="py-20 px-4 bg-neutral-900">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -73,8 +73,8 @@ const ContactForm = () => {
 
             <div className="space-y-6">
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center mr-4">
-                  <Mail className="h-6 w-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-4">
+                  <Mail className="h-6 w-6 text-black" />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold">Email</h4>
@@ -83,8 +83,8 @@ const ContactForm = () => {
               </div>
 
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center mr-4">
-                  <Phone className="h-6 w-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-4">
+                  <Phone className="h-6 w-6 text-black" />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold">Telefone</h4>
@@ -93,8 +93,8 @@ const ContactForm = () => {
               </div>
 
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center mr-4">
-                  <Clock className="h-6 w-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-4">
+                  <Clock className="h-6 w-6 text-black" />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold">Atendimento</h4>
@@ -103,9 +103,9 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <Card className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 border-green-500/30">
+            <Card className="bg-gradient-to-br from-orange-900/30 to-orange-800/30 border-orange-500/30">
               <CardContent className="p-6">
-                <h4 className="text-green-400 font-semibold mb-2">
+                <h4 className="text-orange-400 font-semibold mb-2">
                   ⚡ Atendimento Prioritário!
                 </h4>
                 <p className="text-gray-300 text-sm">
@@ -117,7 +117,7 @@ const ContactForm = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm">
+          <Card className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="text-white text-2xl">Formulário de Contato</CardTitle>
             </CardHeader>
@@ -129,7 +129,7 @@ const ContactForm = () => {
                     placeholder="Seu nome completo *"
                     value={formData.name}
                     onChange={handleChange}
-                    className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400"
+                    className="bg-neutral-700 border-neutral-600 text-white placeholder:text-gray-400"
                     required
                   />
                 </div>
@@ -141,7 +141,7 @@ const ContactForm = () => {
                     placeholder="Seu melhor email *"
                     value={formData.email}
                     onChange={handleChange}
-                    className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400"
+                    className="bg-neutral-700 border-neutral-600 text-white placeholder:text-gray-400"
                     required
                   />
                 </div>
@@ -152,7 +152,7 @@ const ContactForm = () => {
                     placeholder="Telefone/WhatsApp"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400"
+                    className="bg-neutral-700 border-neutral-600 text-white placeholder:text-gray-400"
                   />
                 </div>
 
@@ -162,14 +162,14 @@ const ContactForm = () => {
                     placeholder="Descreva seu projeto ou deixe sua mensagem *"
                     value={formData.message}
                     onChange={handleChange}
-                    className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400 min-h-[120px]"
+                    className="bg-neutral-700 border-neutral-600 text-white placeholder:text-gray-400 min-h-[120px]"
                     required
                   />
                 </div>
 
                 <Button 
                   type="submit"
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"
+                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black font-semibold py-3 shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105"
                 >
                   <Send className="mr-2 h-5 w-5" />
                   Enviar Solicitação

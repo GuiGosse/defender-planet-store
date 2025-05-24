@@ -31,7 +31,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section id="how-it-works" className="py-20 px-4 bg-neutral-900">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -48,15 +48,15 @@ const HowItWorks = () => {
             return (
               <Card 
                 key={index} 
-                className="bg-slate-800/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 transform hover:scale-105 relative overflow-hidden"
+                className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-800/70 transition-all duration-300 transform hover:scale-105 relative overflow-hidden hover:border-orange-500/30"
               >
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">{step.number}</span>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                  <span className="text-black font-bold text-lg">{step.number}</span>
                 </div>
                 
                 <CardContent className="p-6 pt-8">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-white" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-black" />
                   </div>
                   
                   <h3 className="text-xl font-semibold text-white mb-3">

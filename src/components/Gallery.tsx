@@ -42,7 +42,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section id="gallery" className="py-20 px-4 bg-neutral-950">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -57,7 +57,7 @@ const Gallery = () => {
           {builds.map((build) => (
             <Card 
               key={build.id} 
-              className="bg-slate-800/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 transform hover:scale-105 overflow-hidden group"
+              className="bg-neutral-900/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-900/70 transition-all duration-300 transform hover:scale-105 overflow-hidden group hover:border-orange-500/30"
             >
               <div className="relative">
                 <img 
@@ -65,7 +65,7 @@ const Gallery = () => {
                   alt={build.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent opacity-60"></div>
               </div>
               
               <CardContent className="p-6">
