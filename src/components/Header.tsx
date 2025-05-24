@@ -22,7 +22,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-black/95 backdrop-blur-md border-b border-gray-800 z-50">
+    <header className="fixed top-0 w-full bg-neutral-950/95 backdrop-blur-md border-b border-neutral-800 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -39,7 +39,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-300 hover:text-orange-400 transition-colors duration-200"
+                className="text-gray-400 hover:text-orange-500 transition-colors duration-200"
               >
                 {item.label}
               </button>
@@ -52,7 +52,7 @@ const Header = () => {
               onClick={() => scrollToSection('products')}
               variant="outline"
               size="sm"
-              className="border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black bg-black/50"
+              className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black bg-neutral-950/50"
             >
               Ver Produtos
             </Button>
@@ -77,13 +77,13 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-800">
+          <div className="md:hidden py-4 border-t border-neutral-800">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-300 hover:text-orange-400 transition-colors duration-200 text-left"
+                  className="text-gray-400 hover:text-orange-500 transition-colors duration-200 text-left"
                 >
                   {item.label}
                 </button>
@@ -93,7 +93,7 @@ const Header = () => {
                   onClick={() => scrollToSection('products')}
                   variant="outline"
                   size="sm"
-                  className="border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black bg-black/50"
+                  className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black bg-neutral-950/50"
                 >
                   Ver Produtos
                 </Button>
