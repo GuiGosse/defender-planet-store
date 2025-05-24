@@ -1,6 +1,5 @@
-
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Zap, Play, Monitor, Shield, Headphones, Cpu } from "lucide-react";
+import { ShoppingCart, Zap, Play, Monitor, Shield, Headphones, Cpu, Settings } from "lucide-react";
 
 const Hero = () => {
   const scrollToBuilder = () => {
