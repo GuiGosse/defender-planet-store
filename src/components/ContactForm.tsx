@@ -103,12 +103,12 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <Card className="bg-gradient-to-br from-orange-900/30 to-orange-800/30 border-orange-500/30">
+            <Card className="bg-gradient-to-br from-orange-500/20 to-orange-600/20 border-orange-500 border-2 backdrop-blur-sm">
               <CardContent className="p-6">
-                <h4 className="text-orange-400 font-semibold mb-2">
+                <h4 className="text-orange-400 font-bold text-lg mb-3 flex items-center">
                   ⚡ Atendimento Prioritário!
                 </h4>
-                <p className="text-gray-300 text-sm">
+                <p className="text-white font-semibold text-base leading-relaxed">
                   Os 10 primeiros da semana recebem atendimento prioritário 
                   e desconto especial na montagem!
                 </p>

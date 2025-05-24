@@ -1,10 +1,11 @@
+
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Zap, Play, Monitor, Shield, Headphones, Cpu, Settings } from "lucide-react";
 
 const Hero = () => {
-  const scrollToBuilder = () => {
-    const builderSection = document.getElementById('pc-builder');
-    builderSection?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToProducts = () => {
+    const productsSection = document.getElementById('products');
+    productsSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToContact = () => {
@@ -66,7 +67,7 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
-                onClick={scrollToBuilder}
+                onClick={scrollToProducts}
                 size="lg" 
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 border border-orange-400"
               >
