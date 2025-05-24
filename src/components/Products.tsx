@@ -59,6 +59,10 @@ const Products = () => {
     <section id="products" className="py-20 px-4 bg-neutral-900">
       <div className="container mx-auto">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-neutral-800/50 border border-orange-500/20 rounded-full px-4 py-2 backdrop-blur-sm mb-4">
+            <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+            <span className="text-sm text-gray-300">Produtos Premium</span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Produtos em Destaque
           </h2>
@@ -71,8 +75,9 @@ const Products = () => {
           {products.map((product) => (
             <Card 
               key={product.id} 
-              className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-800/70 hover:border-orange-500/50 transition-all duration-300 transform hover:scale-105 overflow-hidden group"
+              className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-800/70 hover:border-orange-500/50 transition-all duration-300 transform hover:scale-105 overflow-hidden group relative"
             >
+              <div className="absolute top-4 left-4 w-2 h-2 bg-orange-400 rounded-full animate-pulse z-10"></div>
               <CardHeader className="p-0">
                 <div className="relative">
                   <img 
@@ -80,12 +85,12 @@ const Products = () => {
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute top-4 right-4">
                     <span className="bg-orange-500 text-black px-3 py-1 rounded-full text-sm font-medium">
                       {product.category}
                     </span>
                   </div>
-                  <div className="absolute top-4 right-4">
+                  <div className="absolute bottom-4 right-4">
                     <div className="bg-neutral-950/50 backdrop-blur-sm text-white px-2 py-1 rounded-lg flex items-center text-sm border border-neutral-700">
                       <Star className="h-3 w-3 text-orange-500 mr-1 fill-current" />
                       {product.rating}

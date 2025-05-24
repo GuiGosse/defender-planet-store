@@ -13,6 +13,10 @@ const FinalCTA = () => {
       <div className="container mx-auto text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="space-y-6">
+            <div className="inline-flex items-center space-x-2 bg-neutral-900/50 border border-orange-500/20 rounded-full px-4 py-2 backdrop-blur-sm mb-4">
+              <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+              <span className="text-sm text-gray-300">Última Chamada</span>
+            </div>
             <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
               Monte Seu PC com 
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600"> Quem Entende</span>
@@ -23,7 +27,8 @@ const FinalCTA = () => {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-orange-600/20 to-orange-500/20 rounded-2xl p-8 backdrop-blur-sm border border-orange-500/30 mb-8">
+          <div className="bg-gradient-to-r from-orange-600/20 to-orange-500/20 rounded-2xl p-8 backdrop-blur-sm border border-orange-500/30 mb-8 relative overflow-hidden">
+            <div className="absolute top-4 right-4 w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
             <div className="flex items-center justify-center mb-4">
               <Zap className="h-8 w-8 text-orange-400 mr-3" />
               <span className="text-2xl font-bold text-white">OFERTA ESPECIAL!</span>
