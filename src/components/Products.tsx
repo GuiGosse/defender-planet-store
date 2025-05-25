@@ -71,9 +71,10 @@ const Products = () => {
           {products.map((product) => (
             <Card 
               key={product.id} 
-              className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-800/70 hover:border-orange-500/50 transition-all duration-300 transform hover:scale-105 overflow-hidden group"
+              className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-800/70 hover:border-orange-500/50 transition-all duration-300 transform hover:scale-105 overflow-hidden group relative"
             >
-              <CardHeader className="p-0">
+              <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-orange-500 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.6)] transition-all duration-500 group-hover:animate-pulse"></div>
+              <CardHeader className="p-0 relative z-10">
                 <div className="relative">
                   <img 
                     src={product.image} 
@@ -94,7 +95,7 @@ const Products = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </CardHeader>
-              <CardContent className="p-6">
+              <CardContent className="p-6 relative z-10">
                 <CardTitle className="text-white mb-2 text-lg">{product.name}</CardTitle>
                 <p className="text-gray-400 mb-4">{product.description}</p>
                 <div className="flex gap-2">

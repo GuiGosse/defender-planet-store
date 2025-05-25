@@ -48,13 +48,14 @@ const HowItWorks = () => {
             return (
               <Card 
                 key={index} 
-                className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-800/70 transition-all duration-300 transform hover:scale-105 relative overflow-hidden hover:border-orange-500/30"
+                className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-800/70 transition-all duration-300 transform hover:scale-105 relative overflow-hidden group"
               >
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-orange-500 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.6)] transition-all duration-500 group-hover:animate-pulse"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center z-20">
                   <span className="text-black font-bold text-lg">{step.number}</span>
                 </div>
                 
-                <CardContent className="p-6 pt-8">
+                <CardContent className="p-6 pt-8 relative z-10">
                   <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-4">
                     <Icon className="h-6 w-6 text-black" />
                   </div>

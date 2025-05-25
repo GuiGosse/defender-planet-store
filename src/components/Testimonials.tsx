@@ -52,9 +52,10 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index} 
-              className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-800/70 transition-all duration-300 transform hover:scale-105 hover:border-orange-500/30"
+              className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-800/70 transition-all duration-300 transform hover:scale-105 relative overflow-hidden group"
             >
-              <CardContent className="p-6">
+              <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-orange-500 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.6)] transition-all duration-500 group-hover:animate-pulse"></div>
+              <CardContent className="p-6 relative z-10">
                 <div className="flex items-center mb-4">
                   <img 
                     src={testimonial.photo} 

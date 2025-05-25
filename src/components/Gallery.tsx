@@ -57,9 +57,10 @@ const Gallery = () => {
           {builds.map((build) => (
             <Card 
               key={build.id} 
-              className="bg-neutral-900/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-900/70 transition-all duration-300 transform hover:scale-105 overflow-hidden group hover:border-orange-500/30"
+              className="bg-neutral-900/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-900/70 transition-all duration-300 transform hover:scale-105 overflow-hidden group relative"
             >
-              <div className="relative">
+              <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-orange-500 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.6)] transition-all duration-500 group-hover:animate-pulse"></div>
+              <div className="relative z-10">
                 <img 
                   src={build.image} 
                   alt={build.title}
@@ -68,7 +69,7 @@ const Gallery = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent opacity-60"></div>
               </div>
               
-              <CardContent className="p-6">
+              <CardContent className="p-6 relative z-10">
                 <h3 className="text-white font-semibold text-lg mb-2">
                   {build.title}
                 </h3>

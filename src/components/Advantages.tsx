@@ -54,9 +54,10 @@ const Advantages = () => {
             return (
               <Card 
                 key={index} 
-                className="bg-neutral-900/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-900/70 transition-all duration-300 transform hover:scale-105 hover:shadow-orange-500/20 hover:shadow-lg hover:border-orange-500/30"
+                className="bg-neutral-900/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-900/70 transition-all duration-300 transform hover:scale-105 hover:shadow-orange-500/20 hover:shadow-lg relative overflow-hidden group"
               >
-                <CardContent className="p-6 text-center">
+                <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-orange-500 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.6)] transition-all duration-500 group-hover:animate-pulse"></div>
+                <CardContent className="p-6 text-center relative z-10">
                   <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Icon className="h-8 w-8 text-black" />
                   </div>

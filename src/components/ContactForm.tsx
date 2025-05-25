@@ -103,9 +103,10 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <Card className="bg-gradient-to-br from-orange-500/20 to-orange-600/20 border-orange-500 border-2 backdrop-blur-sm">
-              <CardContent className="p-6">
-                <h4 className="text-orange-400 font-bold text-lg mb-3 flex items-center">
+            <Card className="bg-gradient-to-br from-orange-600/30 to-orange-500/20 border-orange-500 border-2 backdrop-blur-sm relative overflow-hidden group">
+              <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-orange-400 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.6)] transition-all duration-500 group-hover:animate-pulse"></div>
+              <CardContent className="p-6 relative z-10">
+                <h4 className="text-orange-300 font-bold text-lg mb-3 flex items-center">
                   ⚡ Atendimento Prioritário!
                 </h4>
                 <p className="text-white font-semibold text-base leading-relaxed">
@@ -117,11 +118,12 @@ const ContactForm = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm">
-            <CardHeader>
+          <Card className="bg-neutral-800/50 border-neutral-700 backdrop-blur-sm relative overflow-hidden group">
+            <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-orange-500 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.6)] transition-all duration-500 group-hover:animate-pulse"></div>
+            <CardHeader className="relative z-10">
               <CardTitle className="text-white text-2xl">Formulário de Contato</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="relative z-10">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Input
