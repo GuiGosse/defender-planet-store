@@ -6,13 +6,13 @@ const Gallery = () => {
     {
       id: 1,
       title: "Setup Gamer RTX 4080 + Ryzen 7",
-      image: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&h=300&fit=crop",
+      image: "https://i.imgur.com/sJ97uj2.jpeg",
       specs: "RTX 4080 • Ryzen 7 7700X • 32GB DDR5"
     },
     {
       id: 2,
       title: "Workstation de Edição Profissional",
-      image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400&h=300&fit=crop",
+      image: "https://i.imgur.com/CpDDuiH.jpeg",
       specs: "RTX 4070 • Intel i7-13700K • 64GB DDR5"
     },
     {
@@ -30,7 +30,7 @@ const Gallery = () => {
     {
       id: 5,
       title: "Workstation Compacta ITX",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop",
+      image: "https://i.imgur.com/8VRKWSq.jpeg",
       specs: "RTX 4060 • Ryzen 5 7600 • 16GB DDR5"
     },
     {
