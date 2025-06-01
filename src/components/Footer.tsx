@@ -8,12 +8,14 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center border border-orange-400">
-                <Cpu className="h-5 w-5 text-black" />
-              </div>
-              <span className="text-xl font-bold text-white">TechAssemble</span>
-            </div>
+         <div className="flex items-center space-x-2 mb-4">
+  <img
+    src="https://i.imgur.com/fCV2ueQ.png"
+    alt="Logo TechAssemble"
+    className="w-8 h-8 rounded-lg border border-orange-400 object-cover"
+  />
+</div>
+
             <p className="text-gray-400 mb-4">
               Especialistas em produtos eletrônicos e montagem personalizada de computadores. 
               Transformamos sua visão em realidade.
