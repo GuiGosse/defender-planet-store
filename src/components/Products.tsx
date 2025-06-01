@@ -118,12 +118,6 @@ const Products = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black px-8 py-3 border border-orange-400"
-          >
-            Ver Todos os Produtos
-          </Button>
         </div>
       </div>
     </section>
