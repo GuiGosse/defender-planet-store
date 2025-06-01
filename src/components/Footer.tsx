@@ -53,15 +53,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Mail className="h-4 w-4 mr-3 text-orange-400" />
-                <span>contato@techassemble.com</span>
+                <span>contato@defenderplanet.com.br</span>
               </div>
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-3 text-orange-400" />
-                <span>(11) 99999-9999</span>
+                <span>(19) 98245-5253</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-4 w-4 mr-3 text-orange-400" />
-                <span>São Paulo, SP</span>
+                <span>Paulínia, SP</span>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 TechAssemble. Todos os direitos reservados.
+              © 2024 Defender PlanetStore. Todos os direitos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-orange-400 text-sm transition-colors">
