@@ -14,7 +14,6 @@ const Header = () => {
 
   const navItems = [
     { label: "Início", id: "hero" },
-    { label: "Produtos", id: "products" },
     { label: "Monte seu PC", id: "pc-builder" },
     { label: "Como Funciona", id: "how-it-works" },
     { label: "Galeria", id: "gallery" },
