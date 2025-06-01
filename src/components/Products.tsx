@@ -8,7 +8,7 @@ const Products = () => {
     {
       id: 1,
       name: "SSD Kingston NV2 1TB",
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop",
+      image: "https://images5.kabum.com.br/produtos/fotos/sync_mirakl/400945/medium/SSD-Kingston-Nv2-500GB-M-2-2280-NVME-PCIE-4-0-X4-Leitura-3500MB-s-E-Grava-o-2100MB-s-Preto-Snv2s-500g_1747940388.jpg",
       category: "Armazenamento",
       description: "SSD NVMe de alta performance",
       rating: 4.8
@@ -16,15 +16,15 @@ const Products = () => {
     {
       id: 2,
       name: "RTX 4070 ASUS ROG",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop",
+      image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRnb40FFnvr3h0Dw_CqM7OGK_RGG6MFnz2d4VrZt_cjxMU6XJMCyKIoPDQHK-UUA1MC4Nr0HUe6lFoXtXDdS2s_iGnRxgvHsg",
       category: "Placa de Vídeo",
       description: "Performance premium para jogos",
       rating: 4.9
     },
     {
       id: 3,
-      name: "Ryzen 7 7700X",
-      image: "https://images.unsplash.com/photo-1555617981-dac3880eac6e?w=400&h=300&fit=crop",
+      name: "AMD Ryzen™ 9 9950X3D",
+      image: "https://www.amd.com/content/dam/amd/en/images/products/processors/ryzen/3021650-ryzen-9-9900x3d-product.jpg",
       category: "Processador",
       description: "Processador de alta performance",
       rating: 4.7
@@ -32,23 +32,23 @@ const Products = () => {
     {
       id: 4,
       name: "RAM Corsair 32GB DDR5",
-      image: "https://images.unsplash.com/photo-1562976540-1502c2145186?w=400&h=300&fit=crop",
+      image: "https://m.media-amazon.com/images/I/61XsKRKsGoL.jpg",
       category: "Memória",
       description: "Memória de alta velocidade",
       rating: 4.8
     },
     {
       id: 5,
-      name: "Fonte EVGA 850W Gold",
-      image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=400&h=300&fit=crop",
+      name: "Fonte Corsair HX1000i Series 1000",
+      image: "https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/s/e/sem_t_tulo-1_1.jpg",
       category: "Fonte",
-      description: "Fonte certificada 80+ Gold",
+      description: "Fonte certificada platinum",
       rating: 4.9
     },
     {
       id: 6,
-      name: "Gabinete NZXT H7 RGB",
-      image: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&h=300&fit=crop",
+      name: "ATX Gaming Case",
+      image: "https://m.media-amazon.com/images/I/717U744hhnS._AC_SX679_.jpg",
       category: "Gabinete",
       description: "Design premium com RGB",
       rating: 4.6
