@@ -14,6 +14,7 @@ const Footer = () => {
     alt="Logo TechAssemble"
     className="w-8 h-8 rounded-lg border border-orange-400 object-cover"
   />
+           <span className="text-xl font-bold text-white">Defender PlanetStore</span>
 </div>
 
             <p className="text-gray-400 mb-4">
