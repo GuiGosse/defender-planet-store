@@ -4,7 +4,7 @@ import path from 'path';
 import { componentTagger } from 'lovable-tagger';
 
 export default defineConfig(({ mode }) => ({
-  base: '/tech-dream-assemble/', // <-- Adicione esta linha
+  base: '/defender-planet-store/',
   server: {
     host: '::',
     port: 8080,
