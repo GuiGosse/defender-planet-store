@@ -22,15 +22,19 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full bg-neutral-950/95 backdrop-blur-md border-b border-neutral-800 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center border border-orange-400">
-              <Cpu className="h-5 w-5 text-black" />
-            </div>
-            <span className="text-xl font-bold text-white">TechAssemble</span>
-          </div>
+     <div className="container mx-auto px-4">
+  <div className="flex items-center justify-between h-16">
+    {/* Logo */}
+    <div className="flex items-center space-x-2">
+      <img
+        src="https://imgur.com/a/JXMxY66" // Substitua pelo caminho correto da sua imagem
+        alt="Logo da defender planetstore"
+        className="w-8 h-8 rounded-lg border border-orange-400 object-cover"
+      />
+    </div>
+  </div>
+</div>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
