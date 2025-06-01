@@ -63,7 +63,7 @@ const Products = () => {
             Produtos em Destaque
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Conheça alguns dos melhores componentes disponíveis para sua configuração ideal
+            Destaques para turbinar seu PC
           </p>
         </div>
 
@@ -103,13 +103,7 @@ const Products = () => {
                     variant="outline" 
                     className="flex-1 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black bg-neutral-950/50"
                   >
-                    Ver Detalhes
-                  </Button>
-                  <Button 
-                    size="sm"
-                    className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black"
-                  >
-                    <Zap className="h-4 w-4" />
+                    Mais Informações
                   </Button>
                 </div>
               </CardContent>
