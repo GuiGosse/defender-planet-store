@@ -78,7 +78,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold">Email</h4>
-                  <p className="text-gray-300">contato@montagepc.com</p>
+                  <p className="text-gray-300">contato@defenderplanet.com.br</p>
                 </div>
               </div>
 
@@ -88,7 +88,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold">Telefone</h4>
-                  <p className="text-gray-300">(11) 99999-9999</p>
+                  <p className="text-gray-300">(19) 98245-5253</p>
                 </div>
               </div>
 
@@ -102,19 +102,6 @@ const ContactForm = () => {
                 </div>
               </div>
             </div>
-
-            <Card className="bg-gradient-to-br from-orange-600/30 to-orange-500/20 border-orange-500 border-2 backdrop-blur-sm relative overflow-hidden group">
-              <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-orange-400 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.6)] transition-all duration-500 group-hover:animate-pulse"></div>
-              <CardContent className="p-6 relative z-10">
-                <h4 className="text-orange-300 font-bold text-lg mb-3 flex items-center">
-                  ⚡ Atendimento Prioritário!
-                </h4>
-                <p className="text-white font-semibold text-base leading-relaxed">
-                  Os 10 primeiros da semana recebem atendimento prioritário 
-                  e desconto especial na montagem!
-                </p>
-              </CardContent>
-            </Card>
           </div>
 
           {/* Contact Form */}
