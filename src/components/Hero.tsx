@@ -28,19 +28,18 @@ const Hero = () => {
             <div className="space-y-6">
               <div className="inline-flex items-center space-x-2 bg-neutral-900/50 border border-orange-500/20 rounded-full px-4 py-2 backdrop-blur-sm">
                 <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
-                <span className="text-sm text-gray-300">Especialistas em Tecnologia</span>
+                <span className="text-sm text-gray-300">Especialistas em PCs de Alta Performance</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-                Tecnologia
+                  Performance 
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">
-                  Profissional
+                  Extrema
                 </span>
               </h1>
               
               <p className="text-xl text-gray-400 max-w-xl">
-                Desde componentes individuais até setups completos. 
-                Montagem especializada, produtos de qualidade e suporte técnico completo.
+                De componentes premium a setups completos. Montagem especializada, produtos de qualidade e suporte técnico dedicado.
               </p>
             </div>
 
