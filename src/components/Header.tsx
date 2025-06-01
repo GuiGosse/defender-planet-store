@@ -1,14 +1,13 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Cpu, Zap } from "lucide-react";
+import { Menu, X, Zap } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
-    section?.scrollIntoView({ behavior: 'smooth' });
+    section?.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
   };
 
@@ -17,24 +16,22 @@ const Header = () => {
     { label: "Monte seu PC", id: "pc-builder" },
     { label: "Como Funciona", id: "how-it-works" },
     { label: "Galeria", id: "gallery" },
-    { label: "Contato", id: "contact" }
+    { label: "Contato", id: "contact" },
   ];
 
   return (
     <header className="fixed top-0 w-full bg-neutral-950/95 backdrop-blur-md border-b border-neutral-800 z-50">
-     <div className="container mx-auto px-4">
-  <div className="flex items-center justify-between h-16">
-    {/* Logo */}
-    <div className="flex items-center space-x-2">
-      <img
-        src="https://imgur.com/a/JXMxY66" // Substitua pelo caminho correto da sua imagem
-        alt="Logo da defender planetstore"
-        className="w-8 h-8 rounded-lg border border-orange-400 object-cover"
-      />
-    </div>
-  </div>
-</div>
-
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex items-center space-x-2">
+            <img
+              src="https://i.imgur.com/fCV2ueQ.png" // substitua com o link direto da imagem
+              alt="Logo da Defender PlanetStore"
+              className="w-8 h-8 rounded-lg border border-orange-400 object-cover"
+            />
+            <span className="text-xl font-bold text-white">TechAssemble</span>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -52,7 +49,7 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <Button
-              onClick={() => scrollToSection('products')}
+              onClick={() => scrollToSection("products")}
               variant="outline"
               size="sm"
               className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black bg-neutral-950/50"
@@ -60,7 +57,7 @@ const Header = () => {
               Ver Produtos
             </Button>
             <Button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
               size="sm"
               className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black border border-orange-400"
             >
@@ -93,7 +90,7 @@ const Header = () => {
               ))}
               <div className="flex flex-col space-y-2 pt-4">
                 <Button
-                  onClick={() => scrollToSection('products')}
+                  onClick={() => scrollToSection("products")}
                   variant="outline"
                   size="sm"
                   className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black bg-neutral-950/50"
@@ -101,7 +98,7 @@ const Header = () => {
                   Ver Produtos
                 </Button>
                 <Button
-                  onClick={() => scrollToSection('contact')}
+                  onClick={() => scrollToSection("contact")}
                   size="sm"
                   className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black border border-orange-400"
                 >
