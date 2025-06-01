@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Cpu, HardDrive, Zap, Monitor, MemoryStick, CircuitBoard, Box, Settings } from "lucide-react";
+import { Cpu, HardDrive, Zap, Monitor, MemoryStick, CircuitBoard, Box, Fan, Settings } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -130,7 +130,7 @@ const PCBuilder = () => {
     ssd: HardDrive,
     power: Zap,
     case: Box,
-    cooler: Settings
+    cooler: Fan
   };
 
   const componentLabels = {
@@ -141,7 +141,7 @@ const PCBuilder = () => {
     ssd: "Armazenamento",
     power: "Fonte",
     case: "Gabinete",
-    cooler: "Cooler"
+    cooler: "Refrigeração"
   };
 
   // Atualiza as opções filtradas com base nas seleções
