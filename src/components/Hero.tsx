@@ -140,22 +140,6 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            
-            {/* Floating stats */}
-            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex gap-8 bg-neutral-900/80 backdrop-blur-md border border-neutral-700 rounded-2xl px-8 py-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-orange-500">1000+</div>
-                <div className="text-gray-400 text-sm">Produtos</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-orange-500">5★</div>
-                <div className="text-gray-400 text-sm">Avaliação</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-orange-500">24h</div>
-                <div className="text-gray-400 text-sm">Suporte</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

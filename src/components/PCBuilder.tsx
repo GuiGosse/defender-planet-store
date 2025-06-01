@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -19,59 +19,107 @@ const PCBuilder = () => {
     cooler: ""
   });
 
+  // Estado para armazenar as opções filtradas
+  const [filteredComponents, setFilteredComponents] = useState<Record<string, string[]>>({});
+
   const { toast } = useToast();
 
-  const components = {
+  // Banco de dados de componentes
+  const allComponents = {
     cpu: [
       "Intel Core i5-13400F",
       "Intel Core i7-13700K",
+      "Intel Core i9-13900K",
       "AMD Ryzen 5 7600X",
       "AMD Ryzen 7 7700X",
-      "Intel Core i9-13900K"
+      "AMD Ryzen 9 7950X"
     ],
     gpu: [
       "NVIDIA RTX 4060",
       "NVIDIA RTX 4070",
       "NVIDIA RTX 4080",
+      "NVIDIA RTX 4090",
       "AMD RX 7600 XT",
-      "AMD RX 7800 XT"
+      "AMD RX 7700 XT",
+      "AMD RX 7800 XT",
+      "AMD RX 7900 XTX"
     ],
     ram: [
       "16GB DDR4 3200MHz Corsair",
       "32GB DDR4 3600MHz G.Skill",
       "16GB DDR5 5600MHz Kingston",
-      "32GB DDR5 6000MHz Corsair"
+      "32GB DDR5 6000MHz Corsair",
+      "64GB DDR5 6400MHz G.Skill"
     ],
     motherboard: [
-      "ASUS B550M-A WiFi",
-      "MSI B760M PRO-B",
-      "ASUS ROG Strix B650E",
-      "Gigabyte Z790 AORUS"
+      "ASUS B550M-A WiFi (AMD AM4)",
+      "MSI MPG B650 GAMING EDGE (AMD AM5)",
+      "ASUS ROG Strix B650E (AMD AM5)",
+      "MSI B760M PRO-B (Intel LGA1700)",
+      "ASUS ROG STRIX Z790-E (Intel LGA1700)",
+      "Gigabyte Z790 AORUS (Intel LGA1700)"
     ],
     ssd: [
       "SSD 500GB NVMe Samsung",
       "SSD 1TB NVMe WD Black",
       "SSD 2TB NVMe Kingston",
+      "SSD 4TB NVMe Samsung 990 PRO",
       "SSD 500GB + HDD 1TB"
     ],
     power: [
       "Fonte 650W 80+ Bronze Corsair",
       "Fonte 750W 80+ Gold EVGA",
       "Fonte 850W 80+ Gold Seasonic",
-      "Fonte 1000W 80+ Platinum"
+      "Fonte 1000W 80+ Platinum",
+      "Fonte 1200W 80+ Titanium"
     ],
     case: [
       "Gabinete Mid Tower RGB NZXT",
       "Gabinete Full Tower Corsair",
       "Gabinete Compact RGB Cooler Master",
-      "Gabinete Premium Glass Fractal"
+      "Gabinete Premium Glass Fractal",
+      "Gabinete Mini-ITX NZXT H1"
     ],
     cooler: [
       "Cooler Air Tower Cooler Master",
       "Water Cooler 240mm Corsair",
       "Cooler Air RGB be quiet!",
-      "Water Cooler 360mm NZXT"
+      "Water Cooler 360mm NZXT",
+      "Water Cooler 420mm ARCTIC"
     ]
+  };
+
+  // Regras de compatibilidade
+  const compatibilityRules = {
+    // Compatibilidade CPU -> Motherboard
+    cpuToMotherboard: {
+      "Intel Core i5-13400F": ["MSI B760M PRO-B (Intel LGA1700)", "ASUS ROG STRIX Z790-E (Intel LGA1700)", "Gigabyte Z790 AORUS (Intel LGA1700)"],
+      "Intel Core i7-13700K": ["MSI B760M PRO-B (Intel LGA1700)", "ASUS ROG STRIX Z790-E (Intel LGA1700)", "Gigabyte Z790 AORUS (Intel LGA1700)"],
+      "Intel Core i9-13900K": ["ASUS ROG STRIX Z790-E (Intel LGA1700)", "Gigabyte Z790 AORUS (Intel LGA1700)"],
+      "AMD Ryzen 5 7600X": ["MSI MPG B650 GAMING EDGE (AMD AM5)", "ASUS ROG Strix B650E (AMD AM5)"],
+      "AMD Ryzen 7 7700X": ["MSI MPG B650 GAMING EDGE (AMD AM5)", "ASUS ROG Strix B650E (AMD AM5)"],
+      "AMD Ryzen 9 7950X": ["ASUS ROG Strix B650E (AMD AM5)"]
+    },
+    // Compatibilidade CPU -> RAM
+    cpuToRam: {
+      "Intel Core i5-13400F": ["16GB DDR4 3200MHz Corsair", "32GB DDR4 3600MHz G.Skill", "16GB DDR5 5600MHz Kingston", "32GB DDR5 6000MHz Corsair"],
+      "Intel Core i7-13700K": ["16GB DDR5 5600MHz Kingston", "32GB DDR5 6000MHz Corsair", "64GB DDR5 6400MHz G.Skill"],
+      "Intel Core i9-13900K": ["32GB DDR5 6000MHz Corsair", "64GB DDR5 6400MHz G.Skill"],
+      "AMD Ryzen 5 7600X": ["16GB DDR5 5600MHz Kingston", "32GB DDR5 6000MHz Corsair"],
+      "AMD Ryzen 7 7700X": ["16GB DDR5 5600MHz Kingston", "32GB DDR5 6000MHz Corsair", "64GB DDR5 6400MHz G.Skill"],
+      "AMD Ryzen 9 7950X": ["32GB DDR5 6000MHz Corsair", "64GB DDR5 6400MHz G.Skill"]
+    },
+    // Compatibilidade GPU -> Power
+    gpuToPower: {
+      "NVIDIA RTX 4060": ["Fonte 650W 80+ Bronze Corsair", "Fonte 750W 80+ Gold EVGA", "Fonte 850W 80+ Gold Seasonic", "Fonte 1000W 80+ Platinum"],
+      "NVIDIA RTX 4070": ["Fonte 750W 80+ Gold EVGA", "Fonte 850W 80+ Gold Seasonic", "Fonte 1000W 80+ Platinum"],
+      "NVIDIA RTX 4080": ["Fonte 850W 80+ Gold Seasonic", "Fonte 1000W 80+ Platinum", "Fonte 1200W 80+ Titanium"],
+      "NVIDIA RTX 4090": ["Fonte 1000W 80+ Platinum", "Fonte 1200W 80+ Titanium"],
+      "AMD RX 7600 XT": ["Fonte 650W 80+ Bronze Corsair", "Fonte 750W 80+ Gold EVGA", "Fonte 850W 80+ Gold Seasonic"],
+      "AMD RX 7700 XT": ["Fonte 750W 80+ Gold EVGA", "Fonte 850W 80+ Gold Seasonic", "Fonte 1000W 80+ Platinum"],
+      "AMD RX 7800 XT": ["Fonte 850W 80+ Gold Seasonic", "Fonte 1000W 80+ Platinum"],
+      "AMD RX 7900 XTX": ["Fonte 1000W 80+ Platinum", "Fonte 1200W 80+ Titanium"]
+    }
   };
 
   const componentIcons = {
@@ -95,6 +143,61 @@ const PCBuilder = () => {
     case: "Gabinete",
     cooler: "Cooler"
   };
+
+  // Atualiza as opções filtradas com base nas seleções
+  useEffect(() => {
+    const newFilteredComponents = { ...allComponents };
+
+    // Filtra placas-mãe compatíveis com o CPU selecionado
+    if (selectedComponents.cpu) {
+      const compatibleMotherboards = compatibilityRules.cpuToMotherboard[selectedComponents.cpu as keyof typeof compatibilityRules.cpuToMotherboard];
+      if (compatibleMotherboards) {
+        newFilteredComponents.motherboard = compatibleMotherboards;
+      }
+    }
+
+    // Filtra memórias RAM compatíveis com o CPU selecionado
+    if (selectedComponents.cpu) {
+      const compatibleRam = compatibilityRules.cpuToRam[selectedComponents.cpu as keyof typeof compatibilityRules.cpuToRam];
+      if (compatibleRam) {
+        newFilteredComponents.ram = compatibleRam;
+      }
+    }
+
+    // Filtra fontes compatíveis com a GPU selecionada
+    if (selectedComponents.gpu) {
+      const compatiblePower = compatibilityRules.gpuToPower[selectedComponents.gpu as keyof typeof compatibilityRules.gpuToPower];
+      if (compatiblePower) {
+        newFilteredComponents.power = compatiblePower;
+      }
+    }
+
+    // Verifica se a placa-mãe selecionada ainda é compatível após a troca de CPU
+    if (selectedComponents.motherboard && selectedComponents.cpu) {
+      const compatibleMotherboards = compatibilityRules.cpuToMotherboard[selectedComponents.cpu as keyof typeof compatibilityRules.cpuToMotherboard] || [];
+      if (!compatibleMotherboards.includes(selectedComponents.motherboard)) {
+        setSelectedComponents(prev => ({ ...prev, motherboard: "" }));
+      }
+    }
+
+    // Verifica se a RAM selecionada ainda é compatível após a troca de CPU
+    if (selectedComponents.ram && selectedComponents.cpu) {
+      const compatibleRam = compatibilityRules.cpuToRam[selectedComponents.cpu as keyof typeof compatibilityRules.cpuToRam] || [];
+      if (!compatibleRam.includes(selectedComponents.ram)) {
+        setSelectedComponents(prev => ({ ...prev, ram: "" }));
+      }
+    }
+
+    // Verifica se a fonte selecionada ainda é compatível após a troca de GPU
+    if (selectedComponents.power && selectedComponents.gpu) {
+      const compatiblePower = compatibilityRules.gpuToPower[selectedComponents.gpu as keyof typeof compatibilityRules.gpuToPower] || [];
+      if (!compatiblePower.includes(selectedComponents.power)) {
+        setSelectedComponents(prev => ({ ...prev, power: "" }));
+      }
+    }
+
+    setFilteredComponents(newFilteredComponents);
+  }, [selectedComponents.cpu, selectedComponents.gpu]);
 
   const handleComponentChange = (component: string, value: string) => {
     setSelectedComponents(prev => ({
@@ -124,6 +227,11 @@ const PCBuilder = () => {
     });
   };
 
+  // Determina quais componentes mostrar (filtrados ou todos)
+  const getComponentOptions = (key: string) => {
+    return filteredComponents[key] || allComponents[key as keyof typeof allComponents];
+  };
+
   return (
     <section id="pc-builder" className="py-20 px-4 bg-neutral-950">
       <div className="container mx-auto">
@@ -139,8 +247,10 @@ const PCBuilder = () => {
         <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* Component Selection */}
           <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
-            {Object.entries(components).map(([key, options]) => {
+            {Object.entries(allComponents).map(([key]) => {
               const Icon = componentIcons[key as keyof typeof componentIcons];
+              const options = getComponentOptions(key);
+              
               return (
                 <Card key={key} className="bg-neutral-900/50 border-neutral-700 backdrop-blur-sm hover:bg-neutral-900/70 hover:border-orange-500/50 transition-all duration-300">
                   <CardHeader className="pb-3">
