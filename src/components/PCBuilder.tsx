@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Cpu, HardDrive, Zap, Monitor, MemoryStick, CircuitBoard, Box, Settings } from "lucide-react";
@@ -188,6 +189,16 @@ const PCBuilder = () => {
                     </span>
                   </div>
                 ))}
+
+                   <div className="pt-4 border-t border-orange-500/30">
+                  {/* Preferências do Cliente */}
+                  <div className="bg-neutral-900/50 border border-orange-500/20 rounded-lg p-4 mb-4">
+                    <p className="text-orange-500 font-semibold text-center mb-2">⚙️ Preferências</p>
+                    <Textarea 
+                      placeholder="Informe suas preferências adicionais (ex: foco em jogos, trabalho, orçamento máximo, etc.)"
+                      className="bg-neutral-800 border-neutral-700 text-white resize-none mt-2 min-h-[80px]"
+                    />
+                  </div>
                 
                 <div className="pt-4 border-t border-orange-500/30">
                   <div className="bg-neutral-900/50 border border-orange-500/20 rounded-lg p-4 mb-4">
