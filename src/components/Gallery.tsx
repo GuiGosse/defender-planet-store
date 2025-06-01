@@ -18,13 +18,13 @@ const Gallery = () => {
     {
       id: 3,
       title: "PC Gamer RGB Personalizado",
-      image: "https://images.unsplash.com/photo-1562976540-1502c2145186?w=400&h=300&fit=crop",
+      image: "https://i.imgur.com/0TAMlvu.jpeg",
       specs: "RTX 4060 Ti • Ryzen 5 7600X • 16GB DDR5"
     },
     {
       id: 4,
       title: "Setup Streaming Completo",
-      image: "https://images.unsplash.com/photo-1555617981-dac3880eac6e?w=400&h=300&fit=crop",
+      image: "https://i.imgur.com/0uyMt4S.jpeg",
       specs: "RTX 4070 Ti • Intel i5-13600K • 32GB DDR5"
     },
     {
@@ -36,7 +36,7 @@ const Gallery = () => {
     {
       id: 6,
       title: "PC High-End Enthusiast",
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop",
+      image: "https://i.imgur.com/MeYuxi0.jpeg",
       specs: "RTX 4090 • Intel i9-13900K • 64GB DDR5"
     }
   ];
